@@ -88,8 +88,8 @@ async def on_message(message):
         embed.add_field(name='WolHa 봇 프로필', value='󠀀󠀀 󠀀󠀀')
         embed.add_field(name='**닉네임 & 태그**', value='WolHaBOT#5233', inline=True)
         embed.add_field(name='**봇 ID**', value='604188013139984384', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/606346201784123396/606792801635663881/1564741015418.png')
-        embed.set_footer(text='WolHaBOT#5233 By ArdanKR_#3402', icon_url='https://cdn.discordapp.com/attachments/603214980707516416/606795951037743123/1564741015418.png')
+        embed.set_thumbnail(url='https://discordapp.com/channels/622059538576834562/622059962926891008')
+        embed.set_footer(text='WolHaBOT#5233 By ArdanKR_#3402', icon_url='https://discordapp.com/channels/622059538576834562/622059962926891008')
 
         await client.send_message(message.channel, embed=embed)
 
