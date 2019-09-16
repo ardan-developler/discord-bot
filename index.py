@@ -61,7 +61,7 @@ async def on_message(message):
         embed = discord.Embed(color=0x6184ff)
 
         embed.set_author(name='크레딧')
-        embed.add_field(name='개발자', value='``ArdanKR_#9290``', inline=True)
+        embed.add_field(name='개발자', value='``ArdanKR_#3402``', inline=True)
         embed.add_field(name='코드', value='``PYTHON``', inline=False)
         embed.add_field(name='호스팅', value='``Heroku 24 hour``', inline=False)
         embed.add_field(name='그 외', value='`Copyright ⓒ 2019 ArdanKR_#9290 All right reserved`', inline=False)
@@ -71,11 +71,11 @@ async def on_message(message):
         date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
         embed = discord.Embed(color=0x6184ff)
 
-        embed.set_author(name='XSplace 봇 명령어 목록')
+        embed.set_author(name='WolHaBOT 봇 명령어 목록')
         embed.add_field(name='**일반 명령어**', value='``>>도움말`` , ``>>아바타`` , ``>>리스트`` , ``>>유저정보`` , ``>>봇정보``', inline=True)
         embed.add_field(name='**봇 정보**', value='``>>개발자``', inline=False)
         embed.add_field(name='**Other**', value='`Copyright ⓒ 2019 ArdanKR_ All right reserved`', inline=False)
-        embed.set_footer(text='WolHaBOT 봇을 사용해주셔서 감사합니다. 에러 또는 기타 문제가 발생할 시 디스코드 ArdanKR_#9290으로 연락해주세요')
+        embed.set_footer(text='WolHaBOT 봇을 사용해주셔서 감사합니다. 에러 또는 기타 문제가 발생할 시 디스코드 ArdanKR_#3402로 연락해주세요')
         await client.send_message(message.channel, embed=embed)
 
     if message.content.startswith('>>봇정보'):
