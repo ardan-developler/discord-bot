@@ -8,7 +8,7 @@ from itertools import cycle
 
 #client config
 
-status = ["Prefix = '>>'", 'ArdanKR_#9290', '>>help', "접두사 = '>>'", 'ArdanKR_#9290', '>>도움말', 'Mention Me', '저를 호출해보세요']
+status = ["Prefix = '>>'", 'ArdanKR_#9290', '>>help', "접두사 = '>>'", 'ArdanKR_#9290', 'WolHaBOT']
 
 client = commands.Bot(command_prefix = '>>')
 client.remove_command('help')
@@ -75,7 +75,7 @@ async def on_message(message):
         embed.add_field(name='**일반 명령어**', value='``>>도움말`` , ``>>아바타`` , ``>>리스트`` , ``>>유저정보`` , ``>>봇정보``', inline=True)
         embed.add_field(name='**봇 정보**', value='``>>개발자``', inline=False)
         embed.add_field(name='**Other**', value='`Copyright ⓒ 2019 ArdanKR_ All right reserved`', inline=False)
-        embed.set_footer(text='XSplace 봇을 사용해주셔서 감사합니다. 에러 또는 기타 문제가 발생할 시 디스코드 ArdanKR_#9290으로 연락해주세요')
+        embed.set_footer(text='WolHaBOT 봇을 사용해주셔서 감사합니다. 에러 또는 기타 문제가 발생할 시 디스코드 ArdanKR_#9290으로 연락해주세요')
         await client.send_message(message.channel, embed=embed)
 
     if message.content.startswith('>>봇정보'):
@@ -85,11 +85,11 @@ async def on_message(message):
         embed.set_author(name='봇 정보')
         embed.add_field(name='버전', value='``0.1 알파``', inline=True)
         embed.add_field(name='󠀀󠀀 󠀀󠀀', value='󠀀󠀀 󠀀󠀀')
-        embed.add_field(name='XSplace#7270 봇 프로필', value='󠀀󠀀 󠀀󠀀')
-        embed.add_field(name='**닉네임 & 태그**', value='XSplace#7270', inline=True)
+        embed.add_field(name='WolHa 봇 프로필', value='󠀀󠀀 󠀀󠀀')
+        embed.add_field(name='**닉네임 & 태그**', value='WolHaBOT#5233', inline=True)
         embed.add_field(name='**봇 ID**', value='604188013139984384', inline=True)
         embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/606346201784123396/606792801635663881/1564741015418.png')
-        embed.set_footer(text='XSplace By ArdanKR_#9290', icon_url='https://cdn.discordapp.com/attachments/603214980707516416/606795951037743123/1564741015418.png')
+        embed.set_footer(text='WolHaBOT#5233 By ArdanKR_#3402', icon_url='https://cdn.discordapp.com/attachments/603214980707516416/606795951037743123/1564741015418.png')
 
         await client.send_message(message.channel, embed=embed)
 
