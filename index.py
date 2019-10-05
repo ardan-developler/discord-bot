@@ -26,74 +26,20 @@ async def change_status():
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('>>유저정보'):
-        date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
-        embed = discord.Embed(color=0x6184ff)
-
-        embed.set_author(name=message.author.name + '#' + message.author.discriminator + "님의 프로필")
-        embed.add_field(name='**닉네임 & 태그**', value=message.author.name + '#' + message.author.discriminator, inline=True)
-        embed.add_field(name='**별명**', value=message.author.display_name, inline=True)
-        embed.add_field(name='**계정 생성 일자**', value=str(date.year) + '년 ' + str(date.month) + '월 ' + str(date.day) + '일 ', inline=True)
-        embed.add_field(name='**유저 ID**', value=message.author.id, inline=True)
-        embed.set_thumbnail(url=message.author.avatar_url)
-        embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator)
-
-        await client.send_message(message.channel, embed=embed)
 
     if message.content.startswith('>>리스트'):
         list = []
         for server in client.servers:
             list.append(server.name)
-        await client.send_message(message.channel, "\n".join(list))
-
-    if message.content.startswith('>>아바타'):
         date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
         embed = discord.Embed(color=0x6184ff)
 
-        embed.set_author(name=message.author.name + '#' + message.author.discriminator + "님의 프로필 사진입니다")
-        embed.set_thumbnail(url=message.author.avatar_url)
-        embed.set_footer(text='Requested by • ' + message.author.name + '#' + message.author.discriminator, icon_url=message.author.avatar_url)
+        embed.set_author(name="__**봇이 접속해있는 서버 목록**__")
+        embed.add_field(name='``서버 목록``', value="\n".join(list))
+        
 
         await client.send_message(message.channel, embed=embed)
 
-    if message.content.startswith('>>개발자'):
-        date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
-        embed = discord.Embed(color=0x6184ff)
-
-        embed.set_author(name='크레딧')
-        embed.add_field(name='개발자', value='``ArdanKR_#3402``', inline=True)
-        embed.add_field(name='코드', value='``PYTHON``', inline=False)
-        embed.add_field(name='호스팅', value='``Heroku 24 hour``', inline=False)
-        embed.add_field(name='그 외', value='`Copyright ⓒ 2019 ArdanKR_#9290 All right reserved`', inline=False)
-        await client.send_message(message.channel, embed=embed)
-
-    if message.content.startswith('>>도움말'):
-        date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
-        embed = discord.Embed(color=0x6184ff)
-
-        embed.set_author(name='WolHaBOT 봇 명령어 목록')
-        embed.add_field(name='**일반 명령어**', value='``>>도움말`` , ``>>아바타`` , ``>>리스트`` , ``>>유저정보`` , ``>>봇정보``', inline=True)
-        embed.add_field(name='**봇 정보**', value='``>>개발자``', inline=False)
-        embed.add_field(name='**Other**', value='`Copyright ⓒ 2019 ArdanKR_ All right reserved`', inline=False)
-        embed.set_footer(text='WolHaBOT 봇을 사용해주셔서 감사합니다. 에러 또는 기타 문제가 발생할 시 디스코드 ArdanKR_#3402로 연락해주세요')
-        await client.send_message(message.channel, embed=embed)
-
-    if message.content.startswith('>>봇정보'):
-        date = datetime.datetime.utcfromtimestamp(((int(message.author.id) >> 22) + 1420070400000) / 1000)
-        embed = discord.Embed(color=0x6184ff)
-
-        embed.set_author(name='봇 정보')
-        embed.add_field(name='버전', value='``0.1 알파``', inline=True)
-        embed.add_field(name='󠀀󠀀 󠀀󠀀', value='󠀀󠀀 󠀀󠀀')
-        embed.add_field(name='WolHa 봇 프로필', value='󠀀󠀀 󠀀󠀀')
-        embed.add_field(name='**닉네임 & 태그**', value='WolHaBOT#5233', inline=True)
-        embed.add_field(name='**봇 ID**', value='604188013139984384', inline=True)
-        embed.set_thumbnail(url='https://discordapp.com/channels/622059538576834562/622059962926891008')
-        embed.set_footer(text='WolHaBOT#5233 By ArdanKR_#3402', icon_url='https://discordapp.com/channels/622059538576834562/622059962926891008')
-
-        await client.send_message(message.channel, embed=embed)
-
-#client setting
-client.loop.create_task(change_status())
+    
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
